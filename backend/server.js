@@ -9,7 +9,10 @@ const PORT = process.env.PORT || 4000;
 
 //Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+    origin: ["https://shaiphali-portfolio-lis36ppah-shaiphali-jaiswals-projects.vercel.app"],
+    credentials: true,
+  }));
 
 //Routes
 const contactRoutes = require("./routes/contactRoutes");
