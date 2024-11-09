@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 //Middleware
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ["https://shaiphali-portfolio-lis36ppah-shaiphali-jaiswals-projects.vercel.app", "http://localhost:3000"],
+    origin: ["https://shaiphali-portfolio-lis36ppah-shaiphali-jaiswals-projects.vercel.app"],
     credentials: true,
   }));
 
