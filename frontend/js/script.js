@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const numberInput = document.getElementById("number");
   const messageInput = document.getElementById("message");
 
-  const apiUrl = "http://localhost:4000/api/contact"
+  const apiUrl = "https://shaiphali-portfolio.onrender.com/api/contact"
     
 
   contactForm.addEventListener("submit", async function (event) {
