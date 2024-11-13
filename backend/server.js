@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 4000;
 //Middleware
 app.use(bodyParser.json());
 app.use(cors({
-  origin: '*',
+  origin: 'https://shaiphali-portfolio-bvs2idu2r-shaiphali-jaiswals-projects.vercel.app',
   methods: ['GET', 'POST'], // Allow GET and POST methods
   allowedHeaders: ['Content-Type'],
 }));
