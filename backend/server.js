@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "*",
+    origin: "https://shaiphali-portfolio-eewlbm460-shaiphali-jaiswals-projects.vercel.app",
     methods: ["GET", "POST"], // Allow GET and POST methods
     allowedHeaders: ["Content-Type"],
   })
