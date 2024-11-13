@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       //send post request to backend
-      const response = await fetch(apiUrl, {
+      const response = await fetch("", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,10 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }).showToast();
 
         // Clear the form fields after successful submission
-        nameInput.value = "",
-        emailInput.value = "",
-        numberInput.value = "",
-        messageInput.value = "";
+        (nameInput.value = ""),
+          (emailInput.value = ""),
+          (numberInput.value = ""),
+          (messageInput.value = "");
       } else {
         Toastify({
           text: data.error,
