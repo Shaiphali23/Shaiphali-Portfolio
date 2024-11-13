@@ -52,9 +52,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    const loadingToast = Toastify({
+      text: "Sending your message...",
+      duration: -1,
+      position: "center",
+      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+    }).showToast();
+
     try {
       //send post request to backend
-      const response = await fetch("https://shaiphali-portfolio.onrender.com/api/contact", {
+      const response = await fetch("http://localhost:4000/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,6 +78,12 @@ document.addEventListener("DOMContentLoaded", () => {
           position: "center",
           backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
         }).showToast();
+
+        // Clear the form fields after successful submission
+        (nameInput.value = ""),
+          (emailInput.value = ""),
+          (numberInput.value = ""),
+          (messageInput.value = "");
       } else {
         Toastify({
           text: data.error,
@@ -87,6 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
         position: "center",
         backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
       }).showToast();
+    } finally {
+      loadingToast.hideToast();
     }
   });
 });
