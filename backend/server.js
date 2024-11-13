@@ -9,11 +9,13 @@ const PORT = process.env.PORT || 4000;
 
 //Middleware
 app.use(bodyParser.json());
-app.use(cors({
-  origin: ['https://your-frontend-url.com', 'http://localhost:3000'],
-  methods: ['GET', 'POST'], // Allow GET and POST methods
-  allowedHeaders: ['Content-Type'],
-}));
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST"], // Allow GET and POST methods
+    allowedHeaders: ["Content-Type"],
+  })
+);
 
 //Routes
 const contactRoutes = require("./routes/contactRoutes");

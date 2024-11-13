@@ -34,10 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const numberInput = document.getElementById("number");
   const messageInput = document.getElementById("message");
 
-  const apiUrl =
-    window.location.hostname === "localhost"
-      ? "http://localhost:4000/api/contact" // Local backend URL
-      : "https://your-backend-url.onrender.com/api/contact";
+  const apiUrl = "http://localhost:4000/api/contact"
+    
 
   contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -52,7 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
         text: "Please enter a valid 10-digit phone number.",
         position: "center",
         duration: 3000,
-        backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+        style: {
+          background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+        },
       }).showToast();
       return;
     }
@@ -61,12 +61,14 @@ document.addEventListener("DOMContentLoaded", () => {
       text: "Sending your message...",
       duration: -1,
       position: "center",
-      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
     }).showToast();
 
     try {
       //send post request to backend
-      const response = await fetch("", {
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
           text: data.message,
           duration: 3000,
           position: "center",
-          backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
         }).showToast();
 
         // Clear the form fields after successful submission
@@ -94,7 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
           text: data.error,
           duration: 3000,
           position: "center",
-          backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+          style: {
+            background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+          },
         }).showToast();
       }
     } catch (error) {
@@ -103,7 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
         text: "An error occurred while sending your message.",
         duration: 3000,
         position: "center",
-        backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+        style: {
+          background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+        },
       }).showToast();
     } finally {
       loadingToast.hideToast();
