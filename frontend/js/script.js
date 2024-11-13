@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text: "Please enter a valid 10-digit phone number.",
         position: "center",
         duration: 3000,
-        backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+        background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
       }).showToast();
       return;
     }
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       text: "Sending your message...",
       duration: -1,
       position: "center",
-      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
     }).showToast();
 
     try {
@@ -76,20 +76,20 @@ document.addEventListener("DOMContentLoaded", () => {
           text: data.message,
           duration: 3000,
           position: "center",
-          backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
         }).showToast();
 
         // Clear the form fields after successful submission
-        (nameInput.value = ""),
-          (emailInput.value = ""),
-          (numberInput.value = ""),
-          (messageInput.value = "");
+        nameInput.value = "",
+          emailInput.value = "",
+          numberInput.value = "",
+          messageInput.value = "";
       } else {
         Toastify({
           text: data.error,
           duration: 3000,
           position: "center",
-          backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+          background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
         }).showToast();
       }
     } catch (error) {
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text: "An error occurred while sending your message.",
         duration: 3000,
         position: "center",
-        backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+        background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
       }).showToast();
     } finally {
       loadingToast.hideToast();
