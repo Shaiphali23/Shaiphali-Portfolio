@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const apiUrl =
     window.location.hostname === "localhost"
       ? "http://localhost:4000/api/contact" // Local backend URL
-      : "https://your-backend-url.onrender.com/api/contact";
+      : "https://shaiphali-portfolio.onrender.com/api/contact";
 
   contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
