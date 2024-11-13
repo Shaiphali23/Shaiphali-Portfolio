@@ -34,6 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const numberInput = document.getElementById("number");
   const messageInput = document.getElementById("message");
 
+  const apiUrl =
+    window.location.hostname === "localhost"
+      ? "http://localhost:4000/api/contact" // Local backend URL
+      : "https://your-backend-url.onrender.com/api/contact";
+
   contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
     const name = nameInput.value;
@@ -61,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       //send post request to backend
-      const response = await fetch("", {
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -80,10 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }).showToast();
 
         // Clear the form fields after successful submission
-        (nameInput.value = ""),
-          (emailInput.value = ""),
-          (numberInput.value = ""),
-          (messageInput.value = "");
+        nameInput.value = "",
+        emailInput.value = "",
+        numberInput.value = "",
+        messageInput.value = "";
       } else {
         Toastify({
           text: data.error,
