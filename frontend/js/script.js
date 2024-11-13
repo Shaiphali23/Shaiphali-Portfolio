@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text: "Please enter a valid 10-digit phone number.",
         position: "center",
         duration: 3000,
-        background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+        backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
       }).showToast();
       return;
     }
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       text: "Sending your message...",
       duration: -1,
       position: "center",
-      background: "linear-gradient(to right, #00b09b, #96c93d)",
+      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
     }).showToast();
 
     try {
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
           text: data.message,
           duration: 3000,
           position: "center",
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
         }).showToast();
 
         // Clear the form fields after successful submission
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
           text: data.error,
           duration: 3000,
           position: "center",
-          background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+          backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
         }).showToast();
       }
     } catch (error) {
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text: "An error occurred while sending your message.",
         duration: 3000,
         position: "center",
-        background: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
+        backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc3a0)",
       }).showToast();
     } finally {
       loadingToast.hideToast();
