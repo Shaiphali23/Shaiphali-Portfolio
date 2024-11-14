@@ -34,15 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const numberInput = document.getElementById("number");
   const messageInput = document.getElementById("message");
 
-  let apiUrl;
-  if (
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1"
-  ) {
-    apiUrl = "http://localhost:4000";
-  } else {
-    apiUrl = "https://shaiphali-portfolio.onrender.com";
-  }
+  const apiUrl = "http://localhost:4000/api/contact"
+    
 
   contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
