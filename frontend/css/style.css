@@ -75,6 +75,9 @@ nav {
   background-color: var(--secondary-color);
 }
 @media only screen and (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
   .nav-menu {
     display: none;
     flex-direction: column;
